@@ -24,6 +24,15 @@ bot.on('message', message => {
 });
 
 
+bot.on('message', message => {
+  if (message.content.startsWith('*setgame')) {
+      if (message.author.bot) return;
+      const acti = message.content.slice(4).trim();
+      message.delete()
+      bot.user.setActivity(SayMessage)
+  }
+});
+
   const exampleEmbed = new Discord.MessageEmbed()
 	.setColor('#ffffff')
 	.setTitle('CHAT DE MERDE')
@@ -44,7 +53,7 @@ bot.on('message', message => {
   bot.on('message', message => {
   let admin = message.guild.roles.cache.get("969220999943979018");
     if (message.content === `*oui`) {
-      if (message.member.roles.cache.has(role.id)) {
+      if (message.member.roles.cache.has(admin)) {
         console.log("Yay, the author of the message has the role!");
       }
       
