@@ -23,7 +23,7 @@ bot.on('message', message => {
       const acti = message.content.slice(8).trim();
       message.delete()
       bot.user.setActivity(acti)
-      message.reply("Je joue maintenant à :" + acti)
+      message.reply("Je joue maintenant à : " + "**" + acti + "**")
   }
 });
 
@@ -73,4 +73,14 @@ bot.on('message', message => {
   });
 
 
-
+  bot.on('message', message => {
+    let admin = message.guild.roles.cache.get("264410914592129025");
+    if (message.content.startsWith(`*command`)) {
+  if (message.member.roles.cache.has(admin.id)) {
+    console.log("Yay, the author of the message has the role!");
+  }
+  
+  else {
+    console.log("Nope, noppers, nadda.");
+  }
+}});
