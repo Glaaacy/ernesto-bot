@@ -4,7 +4,19 @@ const Discord =require('discord.js'),
     }),
     fs = require('fs')
 const prefix =  "*"
-const queue = new Map();
+const dotenv = require("dotenv")
+const { REST } = require("@discordjs/rest")
+const { Routes } = require("discord-api-types/v9")
+const fs = require("fs")
+const { Player } = require("discord-player")
+
+const client = new Discord.Client({
+  intents: [
+      "GUILDS",
+      "GUILD_VOICE_STATES"
+  ]
+})
+
 
 
 bot.login(process.env.token)
