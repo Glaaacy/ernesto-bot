@@ -12,7 +12,7 @@ bot.login(process.env.token)
 
 bot.on('ready', () => {
     console.log(`Logged in as ${bot.user.tag}!`);  
-    bot.user.setActivity('Léchouille.');
+    bot.user.setActivity('Léchouille');
 });
 
 
