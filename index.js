@@ -14,15 +14,6 @@ bot.on('ready', () => {
 });
 
 
-bot.on('message', message => {
-  if (message.content.startsWith('*di')) {
-      if (message.author.bot) return;
-      const SayMessage = message.content.slice(4).trim();
-      message.delete()
-      message.channel.send(SayMessage)
-  }
-});
-
 
 bot.on('message', message => {
   if (message.content.startsWith('*setgame')) {
@@ -50,15 +41,6 @@ bot.on('message', message => {
   });
 
 
-
-  bot.on('message', message => {
-    if (message.content.startsWith('*di')) {
-        if (message.author.bot) return;
-        const SayMessage = message.content.slice(4).trim();
-        message.delete()
-        message.channel.send(SayMessage)
-    }
-  });
 
 
   bot.on('message', message => {
