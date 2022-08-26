@@ -51,16 +51,16 @@ bot.on('message', message => {
 
   bot.on('message', message => {
     if (message.content.startsWith("*test"))
-    if (msg.member.roles.has("969220999943979018")) {
+    if (message.member.roles.has("969220999943979018")) {
       message.delete()
-      if (msg.members.mentions.first()) {
+      if (message.members.mentions.first()) {
           try {
              message.channel.send("Ok.")
           } catch {
-              msg.reply("Non.");
+            message.reply("Non.");
           }
       } else {
-          msg.reply(":x: ``Tu ne peux pas.``");
+        message.reply(":x: ``Tu ne peux pas.``");
       }
   }
   });
