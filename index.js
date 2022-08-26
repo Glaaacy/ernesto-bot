@@ -12,7 +12,7 @@ bot.login(process.env.token)
 
 bot.on('ready', () => {
     console.log(`Logged in as ${bot.user.tag}!`);  
-    bot.user.setActivity('Léchouille.');
+    bot.user.setActivity('Léchouille');
 });
 
 
@@ -64,16 +64,12 @@ bot.on('message', message => {
 
   bot.on('message', message => {
     if (message.content === `*di`) {
-      let admin = message.guild.roles.cache.get("969220999943979018");
+      if (message.author.bot) return;
       const SayMessage = message.content.slice(4).trim();
-      if (message.member.roles.cache.has(admin.id)) {
         message.channel.send(SayMessage);
-      }
-      
-      else {
-        message.channel.send(":x: ``Interdit``");
-      }
       message.delete()
     }
   });
+
+
 
