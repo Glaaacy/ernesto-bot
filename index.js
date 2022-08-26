@@ -27,7 +27,7 @@ bot.on('message', message => {
 bot.on('message', message => {
   if (message.content.startsWith('*setgame')) {
       if (message.author.bot) return;
-      const acti = message.content.slice(4).trim();
+      const acti = message.content.slice(8).trim();
       message.delete()
       bot.user.setActivity(acti)
   }
@@ -53,7 +53,7 @@ bot.on('message', message => {
   bot.on('message', message => {
   let admin = message.guild.roles.cache.get("969220999943979018");
     if (message.content === `*oui`) {
-      if (message.member.roles.cache.has(admin)) {
+      if (message.member.roles.cache.has(admin.id)) {
         console.log("Yay, the author of the message has the role!");
       }
       
