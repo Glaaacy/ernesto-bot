@@ -4,6 +4,8 @@ const Discord =require('discord.js'),
     }),
     fs = require('fs')
 const prefix =  "*"
+const queue = new Map();
+const ytdl = require("ytdl-core");
 
 bot.login(process.env.token)
 
