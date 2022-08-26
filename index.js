@@ -1,8 +1,8 @@
 const Discord =require('discord.js'),
     bot = new Discord.Client({
         fetchAllMembers: true
-    }),
-    fs = require('fs')
+    });
+    
 const prefix =  "*"
 const dotenv = require("dotenv")
 const { REST } = require("@discordjs/rest")
