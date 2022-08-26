@@ -50,18 +50,30 @@ bot.on('message', message => {
   });
 
 
+
+  bot.on('message', message => {
+    if (message.content.startsWith('*di')) {
+        if (message.author.bot) return;
+        const SayMessage = message.content.slice(4).trim();
+        message.delete()
+        message.channel.send(SayMessage)
+    }
+  });
+
+
   bot.on('message', message => {
   let admin = message.guild.roles.cache.get("969220999943979018");
-    if (message.content === `*oui`) {
+  const SayMessage = message.content.slice(4).trim();
+    if (message.content === `*di`) {
+      if (message.author.bot) return;
       if (message.member.roles.cache.has(admin.id)) {
-        console.log("Yay, the author of the message has the role!");
+        message.channel.send(SayMessage);
       }
       
       else {
-        console.log("Nope, noppers, nadda.");
+        message.channel.send(":x: ``Interdit``");
       }
       message.delete()
-      message.channel.send("Bonne nuit !");
     }
   });
 
