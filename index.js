@@ -29,7 +29,7 @@ bot.on('message', message => {
       if (message.author.bot) return;
       const acti = message.content.slice(4).trim();
       message.delete()
-      bot.user.setActivity(SayMessage)
+      bot.user.setActivity(acti)
   }
 });
 
