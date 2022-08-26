@@ -51,7 +51,7 @@ bot.on('message', message => {
 
   bot.on('message', message => {
     if (message.content.startsWith("*test"))
-    if (message.member.roles.has("969220999943979018")) {
+    if (message.member.roles.some(role => role.name === "Administrateur")) {
       message.delete()
       if (message.members.mentions.first()) {
           try {
