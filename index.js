@@ -50,7 +50,7 @@ bot.on('message', message => {
 
 
   bot.on('message', message => {
-    if (message..content.startsWith("*test"))
+    if (message.content.startsWith("*test"))
     if (message.member.hasPermission("BAN_MEMBERS")) {
       message.delete()
       if (message.members.mentions.first()) {
