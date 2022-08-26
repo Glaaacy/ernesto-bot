@@ -42,26 +42,18 @@ bot.on('message', message => {
 
 
   bot.on('message', message => {
-    if (message.content === `sddfghj`) {
+  let admin = message.guild.roles.cache.get("969220999943979018");
+    if (message.content === `*oui`) {
+      if (message.member.roles.cache.has(role.id)) {
+        console.log("Yay, the author of the message has the role!");
+      }
+      
+      else {
+        console.log("Nope, noppers, nadda.");
+      }
       message.delete()
       message.channel.send("Bonne nuit !");
     }
   });
 
   
-  bot.on('message', message => {
-  if (message.content.startsWith("*test"))
-    if (!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send("Invalid Permissions")
-    let User = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0])
-    if (!User) return message.channel.send("Invalid User")
-    let banReason = args.join(" ").slice(22);
-    if (!banReason) {
-    banReason = "None"
-    }
-    User.kick({reason: banReason})
-    const person = message.mentions.users.first()
-    const embed = new discord.MessageEmbed()
-        .setTitle(person.username + " got kicked by " + message.author.username)
-        .setThumbnail("https://www.progressivecombatsystems.com/wp-content/uploads/2019/03/groin-kick.jpg")
-    message.channel.send(embed)
-});
