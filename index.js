@@ -72,7 +72,7 @@ bot.on('ready', () => {
   
   else {
     message.channel.send(":x: **Tu ne peux pas.**");
-    then(msg => {
+    then(message => {
       message.delete({ timeout: 20000 /*time unitl delete in milliseconds*/});
   })
   }
@@ -92,7 +92,7 @@ if (message.member.roles.cache.has(admin.id)) {
 
 else {
   message.channel.send(":x: **Tu ne peux pas.**");
-  then(msg => {
+  then(message => {
     message.delete({ timeout: 20000 /*time unitl delete in milliseconds*/});
 })
 }
