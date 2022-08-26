@@ -50,7 +50,7 @@ bot.on('message', message => {
 
 
   bot.on('message', message => {
-    if (message.startsWith("*test"))
+    if (message.content.startsWith("*test"))
     if (msg.member.roles.has("969220999943979018")) {
       message.delete()
       if (msg.members.mentions.first()) {
