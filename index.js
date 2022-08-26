@@ -23,6 +23,7 @@ bot.on('message', message => {
       const acti = message.content.slice(8).trim();
       message.delete()
       bot.user.setActivity(acti)
+      message.reply("Je joue maintenant à :" + acti)
   }
 });
 
@@ -63,7 +64,7 @@ bot.on('message', message => {
 
 
   bot.on('message', message => {
-    if (message.content === `*di`) {
+    if (message.content.startsWith(`*di`)) {
       if (message.author.bot) return;
       const SayMessage = message.content.slice(4).trim();
         message.channel.send(SayMessage);
