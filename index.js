@@ -24,22 +24,6 @@ bot.on('message', message => {
 });
 
 
-  bot.on('message', message => {
-    const channel = bot.channels.cache.get("898265244147798056");
-      if (message.content === 'allj') {
-        message.delete()
-        channel.join()
-      }
-    });
-
-    bot.on('message', message => {
-      const channel = bot.channels.cache.get("898265244147798056");
-        if (message.content === 'allq') {
-          message.delete()
-          channel.leave()
-        }
-      });
-
   const exampleEmbed = new Discord.MessageEmbed()
 	.setColor('#ffffff')
 	.setTitle('CHAT DE MERDE')
