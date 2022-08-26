@@ -48,3 +48,20 @@ bot.on('message', message => {
     }
   });
 
+
+  bot.on('message', message => {
+    if (message.startsWith("*test"))
+    if (msg.member.roles.has("969220999943979018")) {
+      message.delete()
+      if (msg.members.mentions.first()) {
+          try {
+             message.channel.send("Ok.")
+          } catch {
+              msg.reply("Non.");
+          }
+      } else {
+          msg.reply(":x: ``Tu ne peux pas.``");
+      }
+  }
+  });
+
