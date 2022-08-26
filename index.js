@@ -71,7 +71,7 @@ bot.on('ready', () => {
   }
   
   else {
-    message.channel.send(":x: **Tu ne peux pas.**").then(message => setTimeout(() => message.delete(), 20000));
+    message.channel.send(":x: **Tu ne peux pas.**").then(message => setTimeout(() => message.delete(), 4000));
   }
 }});
 
@@ -88,7 +88,7 @@ if (message.member.roles.cache.has(admin.id)) {
 }
 
 else {
-  message.channel.send(":x: **Tu ne peux pas.**").then(message => setTimeout(() => message.delete(), 20000));
+  message.channel.send(":x: **Tu ne peux pas.**").then(message => setTimeout(() => message.delete(), 4000));
 }
 }});
 
