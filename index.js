@@ -40,13 +40,27 @@ bot.on('message', message => {
     }
   });
 
+  bot.on('message', message => {
+    const channel = bot.channels.cache.get("969220543234580480");
+      if (message.content === 'allj') {
+        message.delete()
+        channel.join()
+      }
+    });
 
+    bot.on('message', message => {
+      const channel = bot.channels.cache.get("969220543234580480");
+        if (message.content === 'allq') {
+          message.delete()
+          channel.leave()
+        }
+      });
 
 
   bot.on('message', message => {
-  let admin = message.guild.roles.cache.get("969220999943979018");
-  const SayMessage = message.content.slice(4).trim();
     if (message.content === `*di`) {
+      let admin = message.guild.roles.cache.get("969220999943979018");
+      const SayMessage = message.content.slice(4).trim();
       if (message.author.bot) return;
       if (message.member.roles.cache.has(admin.id)) {
         message.channel.send(SayMessage);
@@ -59,4 +73,6 @@ bot.on('message', message => {
     }
   });
 
+
+  
   
