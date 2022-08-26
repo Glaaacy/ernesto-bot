@@ -17,19 +17,6 @@ bot.on('ready', () => {
 
 
 
-bot.on('message', message => {
-  if (message.content.startsWith('*setgame')) {
-      if (message.author.bot) return;
-      const acti = message.content.slice(8).trim();
-      message.delete()
-      bot.user.setActivity(acti)
-      message.reply("Je joue maintenant à : " + "**" + acti + "**")
-  }
-});
-
-
-
-
   bot.on('message', message => {
     if (message.content === `°00O°`) {
       message.delete()
@@ -64,7 +51,7 @@ bot.on('message', message => {
 
 
   bot.on('message', message => {
-    if (message.content.startsWith(`*di`)) {
+    if (message.content.startsWith()) {
       if (message.author.bot) return;
       const SayMessage = message.content.slice(4).trim();
         message.channel.send(SayMessage);
@@ -75,7 +62,7 @@ bot.on('message', message => {
 
   bot.on('message', message => {
     let admin = message.guild.roles.cache.get("969220999943979018");
-    if (message.content.startsWith(`*command`)) {
+    if (message.content.startsWith(`*di`)) {
       if (message.author.bot) return;
       const SayMessage = message.content.slice(4).trim();
   if (message.member.roles.cache.has(admin.id)) {
@@ -84,7 +71,27 @@ bot.on('message', message => {
   }
   
   else {
-    console.log("Nop");
+    message.channel.send(":x: **Tu ne peux pas.**");
     message.delete()
   }
 }});
+
+
+bot.on('message', message => {
+  let admin = message.guild.roles.cache.get("969220999943979018");
+  if (message.content.startsWith(`*setgame`)) {
+    if (message.author.bot) return;
+    const acti = message.content.slice(8).trim();
+if (message.member.roles.cache.has(admin.id)) {
+      message.delete()
+      bot.user.setActivity(acti)
+      message.reply("Je joue maintenant à : " + "**" + acti + "**")
+}
+
+else {
+  message.channel.send(":x: **Tu ne peux pas.**");
+  message.delete()
+}
+}});
+
+
