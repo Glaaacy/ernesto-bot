@@ -5,7 +5,7 @@ const Discord =require('discord.js'),
     fs = require('fs')
 
 
-bot.login("MTAxMjQyOTU4Mjc3MjczMTkzNQ.GMpx6Z.FBWS0GHW2Or06R3lk_BEk4Sb7nsn14EMJWq1B8")
+bot.login(process.env.token)
 
 
 bot.on('ready', () => {
