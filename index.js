@@ -74,7 +74,7 @@ bot.on('message', message => {
 
 
   bot.on('message', message => {
-    let admin = message.guild.roles.cache.get("264410914592129025");
+    let admin = message.guild.roles.cache.get("969220999943979018");
     if (message.content.startsWith(`*command`)) {
   if (message.member.roles.cache.has(admin.id)) {
     console.log("Yay, the author of the message has the role!");
