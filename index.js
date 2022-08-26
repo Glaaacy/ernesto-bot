@@ -76,11 +76,15 @@ bot.on('message', message => {
   bot.on('message', message => {
     let admin = message.guild.roles.cache.get("969220999943979018");
     if (message.content.startsWith(`*command`)) {
+      if (message.author.bot) return;
+      const SayMessage = message.content.slice(4).trim();
   if (message.member.roles.cache.has(admin.id)) {
-    console.log("Yay, the author of the message has the role!");
+    message.channel.send(SayMessage);
+    message.delete()
   }
   
   else {
-    console.log("Nope, noppers, nadda.");
+    console.log("Nop");
+    message.delete()
   }
 }});
