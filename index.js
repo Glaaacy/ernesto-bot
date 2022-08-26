@@ -4,7 +4,6 @@ const Discord =require('discord.js'),
     });
     
 const prefix =  "*"
-const dotenv = require("dotenv")
 const { REST } = require("@discordjs/rest")
 const { Routes } = require("discord-api-types/v9")
 const fs = require("fs")
